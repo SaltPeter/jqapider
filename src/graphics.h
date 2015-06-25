@@ -19,9 +19,9 @@ struct Graphics {
 	void flip();
 
 	private:
-		SDL_Window* window_;
-		SDL_Surface* screen_;
 		SDL_Renderer* renderer_;
+		SDL_Surface* screen_;
+		SDL_Window* window_;
 };
 
 #endif // GRAPHICS_H_

@@ -1,6 +1,7 @@
 #include "graphics.h"
 
 #include <SDL2/SDL.h>
+#include <GL/glew.h>
 
 namespace {
 const int kScreenWidth = 640;
@@ -8,7 +9,10 @@ const int kScreenHeight = 480;
 const int kBitsPerPixel = 32;
 }
 
-Graphics::Graphics() {
+Graphics::Graphics() :
+		renderer_(nullptr),
+		screen_(nullptr),
+		window_(nullptr) {
 	window_ = SDL_CreateWindow(
 					"Test",
 					SDL_WINDOWPOS_UNDEFINED,
@@ -21,7 +25,6 @@ Graphics::Graphics() {
 Graphics::~Graphics() {
 	SDL_DestroyRenderer(renderer_);
 	SDL_DestroyWindow(window_);
-	window_ = NULL;
 }
 
 void Graphics::blitSurface(

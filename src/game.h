@@ -6,15 +6,14 @@
 struct Graphics;
 
 struct Game {
-   Game();
-   ~Game();
+	Game();
+	~Game();
 
-   static int kTileSize;
-  private:
-   void eventLoop();
-   void update(int elapsed_time_ms);
-   void draw(Graphics& graphics);
-
+	static int kTileSize;
+	private:
+		void eventLoop();
+		void update(int elapsed_time_ms);
+		void draw(Graphics& graphics);
 };
 
 #endif // GAME_H_
